@@ -1,0 +1,27 @@
+{
+  "name": "back-end-project-company-life",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvelyov/Project-Company-Life-Back-End.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mvelyov/Project-Company-Life-Back-End/issues"
+  },
+  "homepage": "https://github.com/mvelyov/Project-Company-Life-Back-End#readme",
+  "dependencies": {
+    "eslint": "^4.19.1",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.6",
+    "sequelize-auto-migrations": "^1.0.2",
+    "sequelize-cli": "^4.0.0"
+  }
+}
