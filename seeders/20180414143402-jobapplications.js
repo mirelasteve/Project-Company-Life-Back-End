@@ -8,6 +8,7 @@ module.exports = {
       firstName: 'John',
       lastName: 'Doe',
       cv: 'cv download link',
+      email: 'mmurray@abv.bg',
       createdAt: new Date(),
       updatedAt: new Date(),
     }, {
@@ -18,6 +19,7 @@ module.exports = {
       comment: 'added comment',
       cv: 'cv download link',
       coverLetter: 'cover letter download link',
+      email: 'mmurray@abv.bg',
       createdAt: new Date(),
       updatedAt: new Date(),
     }], {});

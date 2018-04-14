@@ -99,10 +99,6 @@
                     "allowNull": false,
                     "seqType": "Sequelize.STRING"
                 },
-                "email": {
-                    "allowNull": false,
-                    "seqType": "Sequelize.STRING"
-                },
                 "comment": {
                     "allowNull": true,
                     "seqType": "Sequelize.STRING"
@@ -221,5 +217,5 @@
             "indexes": []
         }
     },
-    "revision": 2
+    "revision": 1
 }
