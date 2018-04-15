@@ -87,6 +87,10 @@
                     "allowNull": false,
                     "seqType": "Sequelize.INTEGER"
                 },
+                "jobId": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER"
+                },
                 "title": {
                     "allowNull": false,
                     "seqType": "Sequelize.STRING"
@@ -221,5 +225,5 @@
             "indexes": []
         }
     },
-    "revision": 2
+    "revision": 3
 }
