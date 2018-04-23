@@ -6,6 +6,6 @@ class JobApplicationsController {
         const jobApplications = await this.data.jobApplications.getById(value);
         return jobApplications;
     }
-};
+}
 
 module.exports = JobApplicationsController;

@@ -15,6 +15,14 @@ class Data {
         });
     }
 
+    getCount(id) {
+        return this.Model.findAll({
+            where: {
+                userId: id,
+            },
+          });
+    }
+
     getById(value) {
         return this.Model.findAll({
             where: {
