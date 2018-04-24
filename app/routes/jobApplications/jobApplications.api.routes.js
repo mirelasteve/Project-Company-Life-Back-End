@@ -14,6 +14,12 @@ const init = (app, data) => {
         const id = req.params.id;
         const jobApplications = await controller.getAllJobApplications(id);
         res.send(jobApplications);
+    })
+    .get('/applications/:userId', async (req, res) => {
+        const id = req.params.userId;
+        const numberOfApplicationsForUser =
+        await controller.getNumberOfJobsForUser(+id);
+        res.send(numberOfApplicationsForUser);
     });
 };
 
