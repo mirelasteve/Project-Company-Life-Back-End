@@ -17,19 +17,19 @@ const init = (app, data) => {
     .post('/links', async (req, res) => {
         const newLinks = req.body;
         await controller.create(newLinks);
-        res.status(201).send('Link Details added!');
+        res.status(201);
     })
     .put('/links', async (req, res) => {
         const editedLinkDets = req.body;
         const id = editedLinkDets.id;
         await controller.update(editedLinkDets, id);
-        res.status(201).send('Link Details edited!');
+        res.status(201);
     })
     .delete('/links', async (req, res) => {
         const editedLinkDets = req.body;
         const id = editedLinkDets.id;
         await controller.delete(id);
-        res.status(201).send('Link Details deleted!');
+        res.status(201);
     })
     .get('/links/homepage', async (req, res) => {
         const linksForHomePage =

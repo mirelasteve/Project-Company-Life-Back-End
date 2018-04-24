@@ -17,19 +17,19 @@ const init = (app, data) => {
     .post('/contactdetails', async (req, res) => {
         const newContactDets = req.body;
         await controller.create(newContactDets);
-        res.status(201).send('Contact Detail added!');
+        res.status(201);
     })
     .put('/contactdetails', async (req, res) => {
         const editedContactsDets = req.body;
         const id = editedContactsDets.id;
         await controller.update(editedContactsDets, id);
-        res.status(201).send('Contact Detail edited!');
+        res.status(201);
     })
     .delete('/contactdetails', async (req, res) => {
         const editedContactsDets = req.body;
         const id = editedContactsDets.id;
         await controller.delete(id);
-        res.status(201).send('Contact Detail deleted!');
+        res.status(201);
     });
 };
 

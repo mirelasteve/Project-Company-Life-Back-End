@@ -18,7 +18,7 @@ const init = (app, data) => {
     .post('/jobapplications', async (req, res) => {
         const newJobApplication = req.body;
         await controller.create(newJobApplication);
-        res.status(201).send('Job Application added!');
+        res.status(201);
     })
     .get('/applications/:userId', async (req, res) => {
         const id = req.params.userId;
