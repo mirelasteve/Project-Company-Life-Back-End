@@ -13,6 +13,23 @@ const init = (app, data) => {
     .get('/jobads', async (req, res) => {
         const jobAds = await controller.getAllJobAds();
         res.send(jobAds);
+    })
+    .post('/jobads', async (req, res) => {
+        const newJobAd = req.body;
+        await controller.create(newJobAd);
+        res.status(201).send('Job Ad added!');
+    })
+    .put('/jobads', async (req, res) => {
+        const editedJobAd = req.body;
+        const id = editedJobAd.id;
+        await controller.update(editedJobAd, id);
+        res.status(201).send('Job Ad edited!');
+    })
+    .delete('/jobads', async (req, res) => {
+        const editedJobAd = req.body;
+        const id = editedJobAd.id;
+        await controller.delete(id);
+        res.status(201).send('Job Ad deleted!');
     });
 };
 

@@ -13,6 +13,23 @@ const init = (app, data) => {
     .get('/contactdetails', async (req, res) => {
         const contactDetails = await controller.getAllContactDetails();
         res.send(contactDetails);
+    })
+    .post('/contactdetails', async (req, res) => {
+        const newContactDets = req.body;
+        await controller.create(newContactDets);
+        res.status(201).send('Contact Detail added!');
+    })
+    .put('/contactdetails', async (req, res) => {
+        const editedContactsDets = req.body;
+        const id = editedContactsDets.id;
+        await controller.update(editedContactsDets, id);
+        res.status(201).send('Contact Detail edited!');
+    })
+    .delete('/contactdetails', async (req, res) => {
+        const editedContactsDets = req.body;
+        const id = editedContactsDets.id;
+        await controller.delete(id);
+        res.status(201).send('Contact Detail deleted!');
     });
 };
 
