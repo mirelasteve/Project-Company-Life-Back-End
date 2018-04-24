@@ -15,10 +15,8 @@ const init = (app, data) => {
         const jobApplications = await controller.getAllJobApplications(id);
         res.send(jobApplications);
     })
-    .post('/jobapplications/:id', async (req, res) => {
-        const jobId = req.params.id;
+    .post('/jobapplications', async (req, res) => {
         const newJobApplication = req.body;
-        newJobApplication.jobId = jobId;
         await controller.create(newJobApplication);
         res.status(201).send('Job Application added!');
     })
