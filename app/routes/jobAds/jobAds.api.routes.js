@@ -7,6 +7,7 @@ const JobAdsController = require('./jobAds.controller');
 const init = (app, data) => {
     const router = new Router();
     const controller = new JobAdsController(data);
+
     app.use('/api', router);
 
     router

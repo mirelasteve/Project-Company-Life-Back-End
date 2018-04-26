@@ -31,6 +31,14 @@ class Data {
         });
     }
 
+    getUserByEmail(email) {
+        return this.Model.findOne({
+            where: {
+                email,
+            },
+        });
+    }
+
     create(newObject) {
         return this.Model.create(newObject);
     }

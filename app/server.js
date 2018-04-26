@@ -1,15 +1,19 @@
+const passport = require('passport');
 const express = require('express');
 const expressValidator = require('express-validator');
 const bodyParser = require('body-parser');
 const data = require('./data');
 const app = express();
 const cors = require('cors');
-// app.use(bodyParser.urlencoded({
-//     extended: true,
-// }));
+const strategy = require('./config/auth');
+
+
 app.use(bodyParser.json());
 app.use(expressValidator());
 app.use(cors());
+
+passport.use('jwt', strategy.init(app, data));
+
 require('./config/express').init(app);
 
 app.use((req, res, next) => {
