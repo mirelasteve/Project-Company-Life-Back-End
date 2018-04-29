@@ -11,7 +11,7 @@ const init = (app, data) => {
 
     router
     .get('/users', async (req, res) => {
-        const users = await controller.getAllUsers();
+        const users = await controller.getAllUsers();  
         res.send(users);
     });
 };

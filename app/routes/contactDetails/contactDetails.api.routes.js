@@ -23,7 +23,9 @@ const init = (app, data) => {
         const editedContactsDets = req.body;
         const id = editedContactsDets.id;
         await controller.update(editedContactsDets, id);
-        res.status(201);
+        res.status(201).send({
+            message: 'Successful update',
+        });
     })
     .delete('/contactdetails', async (req, res) => {
         const editedContactsDets = req.body;

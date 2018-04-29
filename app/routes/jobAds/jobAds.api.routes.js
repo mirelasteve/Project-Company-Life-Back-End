@@ -24,7 +24,9 @@ const init = (app, data) => {
         const editedJobAd = req.body;
         const id = editedJobAd.id;
         await controller.update(editedJobAd, id);
-        res.status(201);
+        res.status(201).send({
+            message: 'Successful update!',
+        });
     })
     .delete('/jobads', async (req, res) => {
         const editedJobAd = req.body;

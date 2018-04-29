@@ -23,7 +23,9 @@ const init = (app, data) => {
         const editedLinkDets = req.body;
         const id = editedLinkDets.id;
         await controller.update(editedLinkDets, id);
-        res.status(201);
+        res.status(201).send({
+            message: 'Successful update',
+        });
     })
     .delete('/links', async (req, res) => {
         const editedLinkDets = req.body;
