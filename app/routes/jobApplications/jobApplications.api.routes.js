@@ -10,6 +10,10 @@ const init = (app, data) => {
     app.use('/api', router);
 
     router
+    .get('/jobapplications', async (req, res) => {
+        const jobApplications = await controller.getAll();
+        res.send(jobApplications);
+    })
     .get('/jobapplications/:id', async (req, res) => {
         const id = req.params.id;
         const jobApplications = await controller.getAllJobApplications(id);
@@ -19,6 +23,14 @@ const init = (app, data) => {
         const newJobApplication = req.body;
         await controller.create(newJobApplication);
         res.status(201);
+    })
+    .put('/jobapplications/:jobId', async (req, res) => {
+        const jobId = req.params.jobId;
+        const newJobApplication = req.body;
+        await controller.update(newJobApplication, jobId);
+        res.status(201).send({
+            message: 'Successful update',
+        });
     })
     .get('/applications/:userId', async (req, res) => {
         const id = req.params.userId;

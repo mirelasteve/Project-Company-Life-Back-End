@@ -57,6 +57,14 @@ class Data {
         });
     }
 
+    updateApplication(object, id) {
+        return this.Model.update(object, {
+            where: {
+                jobId: id,
+            },
+        });
+    }
+
     delete(id) {
         this.Model.destroy({
             where: {
