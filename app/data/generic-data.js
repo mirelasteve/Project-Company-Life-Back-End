@@ -14,13 +14,19 @@ class Data {
             },
         });
     }
-
+    getByEmail(value) {
+        return this.Model.findAll({
+            where: {
+                email: value,
+            },
+        });
+    }
     getCount(id) {
         return this.Model.findAll({
             where: {
                 userId: id,
             },
-          });
+        });
     }
 
     getById(value) {

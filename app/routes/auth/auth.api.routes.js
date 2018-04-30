@@ -15,45 +15,45 @@ const init = (app, data) => {
     //     session: false,
     // }),
     router
-        .post('/login', async (req, res) => {
+        .post('/login', async(req, res) => {
             const user = req.body;
             const userFound = await controller.findUser(user.email);
 
             if (userFound) {
                 bcrypt.compare(user.password, userFound.password,
                     (err, response) => {
-                    if (response) {
-                        const payload = {
-                            sub: userFound.id,
-                            email: userFound.email,
-                            password: userFound.password,
-                            iss: 'telerik',
-                            admin: userFound.isAdmin,
-                        };
+                        if (response) {
+                            const payload = {
+                                sub: userFound.id,
+                                email: userFound.email,
+                                password: userFound.password,
+                                iss: 'telerik',
+                                admin: userFound.isAdmin,
+                            };
 
-                        const secret = 'xxx';
+                            const secret = 'xxx';
 
-                        const token = jwt.encode(payload, secret);
+                            const token = jwt.encode(payload, secret);
 
-                        res.status(200).send({
-                            token: token,
-                        });
-                    } else {
-                        res.status(401).send({
-                        err: `Wrong password`,
-                        });
-                    }
-                });
-            } else {
-                    res.status(401).send({
-                    err: `User doesn't exist`,
+                            res.status(200).send({
+                                token: token,
+                            });
+                        } else {
+                            res.status(401).send({
+                                err: `Wrong password`,
+                            });
+                        }
                     });
-                }
+            } else {
+                res.status(401).send({
+                    err: `User doesn't exist`,
+                });
+            }
         })
-        .post('/register', async (req, res) => {
+        .post('/register', async(req, res) => {
             const newUser = req.body;
             const userFound = await controller.findUser(newUser.email.trim());
-
+            console.log(req.body);
             if (!userFound) {
                 const plainTextPass = newUser.password.trim();
                 const saltRounds = 10;

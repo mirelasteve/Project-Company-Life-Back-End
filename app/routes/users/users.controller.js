@@ -7,6 +7,10 @@ class UsersController {
         delete allUsers.password;
         return allUsers;
     }
+    async getEmail(email) {
+        const userData = await this.data.users.getByEmail(email);
+        return userData;
+    }
 }
 
 module.exports = UsersController;
