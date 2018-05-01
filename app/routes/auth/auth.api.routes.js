@@ -17,9 +17,10 @@ const init = (app, data) => {
     router
         .post('/login', async(req, res) => {
             const user = req.body;
-            const userFound = await controller.findUser(user.email);
 
+            const userFound = await controller.findUser(user.email);
             if (userFound) {
+                console.log(user);
                 bcrypt.compare(user.password, userFound.password,
                     (err, response) => {
                         if (response) {
