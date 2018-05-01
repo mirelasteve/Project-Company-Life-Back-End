@@ -7,10 +7,11 @@ class Data {
         return this.Model.findAll();
     }
 
-    getByName(value) {
-        return this.Model.findOne({
+    getByName(hiddenValue, typeValue) {
+        return this.Model.findAll({
             where: {
-                hidden: value,
+                hidden: hiddenValue,
+                type: typeValue,
             },
         });
     }

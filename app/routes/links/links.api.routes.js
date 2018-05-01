@@ -33,9 +33,18 @@ const init = (app, data) => {
         await controller.delete(id);
         res.status(201);
     })
-    .get('/links/homepage', async (req, res) => {
+    .get('/links/homepage/social', async (req, res) => {
+        const hiddenValue = null;
+        const typeValue = 'social';
         const linksForHomePage =
-        await controller.getAllLinksForHomePage(null);
+        await controller.getAllLinksForHomePage(hiddenValue, typeValue);
+        res.send(linksForHomePage);
+    })
+    .get('/links/homepage/action', async (req, res) => {
+        const hiddenValue = null;
+        const typeValue = 'action';
+        const linksForHomePage =
+        await controller.getAllLinksForHomePage(hiddenValue, typeValue);
         res.send(linksForHomePage);
     });
 };

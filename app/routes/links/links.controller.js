@@ -6,8 +6,8 @@ class LinksController {
         const allLinks = await this.data.links.getAll();
         return allLinks;
     }
-    async getAllLinksForHomePage(value) {
-        const allLinksForHomePage = await this.data.links.getByName(value);
+    async getAllLinksForHomePage(hiddenValue, typeValue) {
+        const allLinksForHomePage = await this.data.links.getByName(hiddenValue, typeValue);
         return allLinksForHomePage;
     }
     async create(newObject) {
