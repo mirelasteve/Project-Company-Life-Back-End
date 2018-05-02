@@ -17,10 +17,10 @@ const init = (app, data) => {
     router
         .post('/login', async(req, res) => {
             const user = req.body;
-
+            // console.log(req.body);
             const userFound = await controller.findUser(user.email);
             if (userFound) {
-                console.log(user);
+                // console.log('......', user);
                 bcrypt.compare(user.password, userFound.password,
                     (err, response) => {
                         if (response) {
@@ -31,11 +31,8 @@ const init = (app, data) => {
                                 iss: 'telerik',
                                 admin: userFound.isAdmin,
                             };
-
                             const secret = 'xxx';
-
                             const token = jwt.encode(payload, secret);
-
                             res.status(200).send({
                                 token: token,
                             });
@@ -54,7 +51,6 @@ const init = (app, data) => {
         .post('/register', async(req, res) => {
             const newUser = req.body;
             const userFound = await controller.findUser(newUser.email.trim());
-            console.log(req.body);
             if (!userFound) {
                 const plainTextPass = newUser.password.trim();
                 const saltRounds = 10;
@@ -65,17 +61,28 @@ const init = (app, data) => {
                             password: hash,
                             isAdmin: newUser.isAdmin,
                         };
-                        controller.createUser(user);
+                        controller.createUser(user).then(async(u) => {
+                            const userFoundD = await controller.findUser(newUser.email);
+                            console.log('FOUND FOUND FOUND', userFoundD.dataValues);
+                            const secret = 'xxx';
+                            const token = jwt.encode(userFoundD.dataValues, secret);
+                            res.status(200).send({
+                                msg: 'Successful registration',
+                                token: token
+                            });
+                        });
                     });
                 });
+
                 res.status(200).send({
                     msg: 'Successful registration',
+                    token: token
                 });
             } else {
                 res.status(401).send({
                     err: 'User already exist',
                 });
-            }
+            };
         });
 };
 
