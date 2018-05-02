@@ -1,3 +1,5 @@
+const multer = require('multer');
+
 const {
     Router,
 } = require('express');
@@ -5,6 +7,15 @@ const {
 const JobApplicationsController = require('./jobApplications.controller');
 
 const init = (app, data) => {
+    const storage = multer.diskStorage({
+        destination: function(req, file, cb) {
+            cb(null, '../storage');
+        },
+        filename: function(req, file, cb) {
+            cb(null, Date.now() + file.originalname);
+        },
+    });
+    const upload = multer({ storage: storage });
     const router = new Router();
     const controller = new JobApplicationsController(data);
     app.use('/api', router);
@@ -19,10 +30,15 @@ const init = (app, data) => {
         const jobApplications = await controller.getAllJobApplications(id);
         res.send(jobApplications);
     })
-    .post('/jobapplications', async (req, res) => {
+    .post('/jobapplications', upload.any(), async (req, res) => {
         const newJobApplication = req.body;
+        const links = req.files.map((file) => file.path);
+        newJobApplication.cv = links[0];
+        newJobApplication.coverLetter = links[1];
         await controller.create(newJobApplication);
-        res.status(201);
+        res.status(201).send({
+            message: 'Successful job application',
+        });
     })
     .put('/jobapplications/:jobId', async (req, res) => {
         const jobId = req.params.jobId;

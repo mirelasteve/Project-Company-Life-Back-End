@@ -26,6 +26,7 @@ const init = (app, data) => {
                         if (response) {
                             const payload = {
                                 sub: userFound.id,
+                                id: userFound.id,
                                 email: userFound.email,
                                 password: userFound.password,
                                 iss: 'telerik',
@@ -57,9 +58,12 @@ const init = (app, data) => {
                 bcrypt.genSalt(saltRounds, (err, salt) => {
                     bcrypt.hash(plainTextPass, salt, (errHash, hash) => {
                         const user = {
+                            id: newUser.id,
                             email: newUser.email,
                             password: hash,
                             isAdmin: newUser.isAdmin,
+                            iss: 'telerik',
+                            admin: newUser.isAdmin,
                         };
                         controller.createUser(user).then(async(u) => {
                             const userFoundD = await controller.findUser(newUser.email);

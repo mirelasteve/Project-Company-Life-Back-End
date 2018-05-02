@@ -8,7 +8,7 @@ const cors = require('cors');
 const strategy = require('./config/auth');
 
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '50mb' }));
 app.use(expressValidator());
 app.use(cors());
 
