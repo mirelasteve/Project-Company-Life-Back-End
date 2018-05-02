@@ -14,6 +14,10 @@ const init = (app, data) => {
         const contactDetails = await controller.getAllContactDetails();
         res.send(contactDetails);
     })
+    .get('/contactdetails/map', async (req, res) => {
+        const mapAddress = await controller.getMapAddress();
+        res.send(mapAddress);
+    })
     .post('/contactdetails', async (req, res) => {
         const newContactDets = req.body;
         await controller.create(newContactDets);

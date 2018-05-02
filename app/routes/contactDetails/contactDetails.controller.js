@@ -6,6 +6,10 @@ class ContactDetailsController {
         const contactDetails = await this.data.contactDetails.getAll();
         return contactDetails;
     }
+    async getMapAddress() {
+        const mapAddress = await this.data.contactDetails.getMapAddress();
+        return mapAddress;
+    }
     async create(newObject) {
         const createdContactsDetail =
         await this.data.contactDetails.create(newObject);

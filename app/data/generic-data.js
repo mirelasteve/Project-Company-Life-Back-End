@@ -7,6 +7,14 @@ class Data {
         return this.Model.findAll();
     }
 
+    getMapAddress() {
+        return this.Model.findOne({
+            where: {
+                isMapAddress: 'yes',
+            },
+        });
+    }
+
     getByName(hiddenValue, typeValue) {
         return this.Model.findAll({
             where: {
