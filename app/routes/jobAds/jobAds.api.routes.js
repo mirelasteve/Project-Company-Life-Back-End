@@ -15,6 +15,11 @@ const init = (app, data) => {
         const jobAds = await controller.getAllJobAds();
         res.send(jobAds);
     })
+    .get('/jobads/open', async (req, res) => {
+        const value = 'open';
+        const jobAds = await controller.getAllOpenPositions(value);
+        res.send(jobAds);
+    })
     .post('/jobads', async (req, res) => {
         const newJobAd = req.body;
         await controller.create(newJobAd);

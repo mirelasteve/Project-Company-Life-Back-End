@@ -6,6 +6,10 @@ class JobAdsController {
         const jobAds = await this.data.jobAds.getAll();
         return jobAds;
     }
+    async getAllOpenPositions(value) {
+        const openPositions = await this.data.jobAds.getAllOpenPositions(value);
+        return openPositions;
+    }
     async create(newObject) {
         const createdJobAd =
         await this.data.jobAds.create(newObject);

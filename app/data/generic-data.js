@@ -7,6 +7,14 @@ class Data {
         return this.Model.findAll();
     }
 
+    getAllOpenPositions(value) {
+        return this.Model.findAll({
+            where: {
+                status: value,
+            }
+        });
+    }
+
     getMapAddress() {
         return this.Model.findOne({
             where: {
