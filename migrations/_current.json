@@ -209,7 +209,7 @@
                     "seqType": "Sequelize.STRING"
                 },
                 "password": {
-                    "unique": true,
+                    "unique": false,
                     "allowNull": false,
                     "seqType": "Sequelize.STRING"
                 },
