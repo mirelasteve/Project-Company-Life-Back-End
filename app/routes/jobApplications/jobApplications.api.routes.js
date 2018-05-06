@@ -9,7 +9,7 @@ const JobApplicationsController = require('./jobApplications.controller');
 const init = (app, data) => {
     const storage = multer.diskStorage({
         destination: function(req, file, cb) {
-            cb(null, '../storage');
+            cb(null, '../front-end-company-life/storage');
         },
         filename: function(req, file, cb) {
             cb(null, Date.now() + file.originalname);
@@ -32,7 +32,7 @@ const init = (app, data) => {
     })
     .post('/jobapplications', upload.any(), async (req, res) => {
         const newJobApplication = req.body;
-        const links = req.files.map((file) => file.path);
+        const links = req.files.map((file) => file.filename);
         newJobApplication.cv = links[0];
         newJobApplication.coverLetter = links[1];
         await controller.create(newJobApplication);
