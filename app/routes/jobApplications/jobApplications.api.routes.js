@@ -9,7 +9,7 @@ const JobApplicationsController = require('./jobApplications.controller');
 const init = (app, data) => {
     const storage = multer.diskStorage({
         destination: function(req, file, cb) {
-            cb(null, '../front-end-company-life/storage');
+            cb(null, '../front-end-company-life/lifeProject/storage');
         },
         filename: function(req, file, cb) {
             cb(null, Date.now() + file.originalname);
