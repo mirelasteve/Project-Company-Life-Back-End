@@ -12,7 +12,7 @@ module.exports = {
       Practicing your language skills on a daily basis
       Summer opportunity – April- September`,
                 status: 'open',
-                jobTypeId: 3,
+                jobTypeId: 2,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             }, {
@@ -24,7 +24,7 @@ module.exports = {
       Other than the statutory taxes, we also offer our employees a unique social benefits package which includes: Additional Health Insurance; Life Insurance; Food Vouchers; Gift Vouchers; Transportation Allowance
       Employee recognition programs`,
                 status: 'open',
-                jobTypeId: 5,
+                jobTypeId: 3,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             }, {
@@ -40,7 +40,7 @@ module.exports = {
       Solid debugging and troubleshooting skills
       Very good English both verbal and written`,
                 status: 'open',
-                jobTypeId: 1,
+                jobTypeId: 1,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             }, {
@@ -61,7 +61,7 @@ Strong professional experience in NodeJS
 Professional experience in building APIs
 Good knowledge of SQL`,
                 status: 'closed',
-                jobTypeId: 1,
+                jobTypeId: 1,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
@@ -82,7 +82,7 @@ Skills Required:
 Previous experience is desired but not essential.
       `,
                 status: 'open',
-                jobTypeId: 8,
+                jobTypeId: 5,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
@@ -97,7 +97,7 @@ Previous experience is desired but not essential.
         Job Purpose: To provide a professional and effective service in support of the contract's Logistics/ Concierge operation. Duties are across all of the contract's sites, to and from multiple locations, utilising the appropriate manual handling equipment to affect the most efficient service.
       `,
                 status: 'open',
-                jobTypeId: 10,
+                jobTypeId: 2,          
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
@@ -111,7 +111,7 @@ From checking invoices and keeping important documents secure, to organising fil
 We do things our own way at Aldi. But whatever we're doing, we must be getting it right. With a wave 
 of impressive sales figures behind us, we're opening new stores at lightning speed. And without our Corporate Logistics team, there'd simply be no products in those stores.`,
                 status: 'open',
-                jobTypeId: 10,
+                jobTypeId: 3,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
@@ -125,7 +125,7 @@ of impressive sales figures behind us, we're opening new stores at lightning spe
          Currently we are recruiting for a Finance Manager.
         `,
                 status: 'open',
-                jobTypeId: 9,
+                jobTypeId: 4,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
@@ -155,7 +155,7 @@ of impressive sales figures behind us, we're opening new stores at lightning spe
                     Provide detailed credit reports for number of calls made and potential outcomes.
         `,
                 status: 'open',
-                jobTypeId: 9,
+                jobTypeId: 5,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
@@ -173,8 +173,8 @@ of impressive sales figures behind us, we're opening new stores at lightning spe
                  to adhere to the regulators Rules, Codes of Practice and Policy Statements including
                   the principles of Treating Customers Fairly and the Society Code of Ethics.
         `,
-                status: 'close',
-                jobTypeId: 9,
+                status: 'closed',
+                jobTypeId: 5,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
@@ -197,7 +197,7 @@ of impressive sales figures behind us, we're opening new stores at lightning spe
                 Please email cv
         `,
                 status: 'open',
-                jobTypeId: 2,
+                jobTypeId: 3,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
@@ -215,7 +215,7 @@ of impressive sales figures behind us, we're opening new stores at lightning spe
                   own Marketing Communications plan.
         `,
                 status: 'open',
-                jobTypeId: 2,
+                jobTypeId: 1,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
@@ -238,8 +238,8 @@ of impressive sales figures behind us, we're opening new stores at lightning spe
                                  running of the accreditation process and contribute in driving 
                                  sustainable growth.
         `,
-                status: 'close',
-                jobTypeId: 2,
+                status: 'closed',
+                jobTypeId: 4,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
@@ -261,7 +261,7 @@ of impressive sales figures behind us, we're opening new stores at lightning spe
                     Main Pay Scale
         `,
                 status: 'open',
-                jobTypeId: 5,
+                jobTypeId: 5,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
@@ -282,7 +282,7 @@ of impressive sales figures behind us, we're opening new stores at lightning spe
                     Main Pay Scale
         `,
                 status: 'open',
-                jobTypeId: 5,
+                jobTypeId: 4,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
@@ -301,7 +301,7 @@ of impressive sales figures behind us, we're opening new stores at lightning spe
                      requirement for this job role and a natural flair for number skills is essential.
         `,
                 status: 'open',
-                jobTypeId: 7,
+                jobTypeId: 1,                
                 createdAt: new Date(),
                 updatedAt: new Date(),
             }

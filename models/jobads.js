@@ -13,13 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    jobTypeId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   }, {});
-  jobAds.associate = (models) => {
-    const {
-      jobType,
-    } = models;
-
-    jobType.hasMany(jobAds);
-  };
+  jobAds.associate = () => {
+   };
   return jobAds;
 };

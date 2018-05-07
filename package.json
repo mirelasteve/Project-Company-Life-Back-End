@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
+        "auto-migrate": "node ./node_modules/sequelize-auto-migrations/bin/makemigration.js --name migrated table",
         "migrate": "node_modules/.bin/sequelize db:migrate",
         "seed": "node_modules/.bin/sequelize db:seed:all",
         "start": "node app/server.js"

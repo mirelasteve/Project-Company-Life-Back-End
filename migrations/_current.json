@@ -53,6 +53,10 @@
                     "allowNull": false,
                     "seqType": "Sequelize.STRING"
                 },
+                "jobTypeId": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER"
+                },
                 "createdAt": {
                     "allowNull": false,
                     "seqType": "Sequelize.DATE"
@@ -60,16 +64,6 @@
                 "updatedAt": {
                     "allowNull": false,
                     "seqType": "Sequelize.DATE"
-                },
-                "jobTypeId": {
-                    "allowNull": true,
-                    "references": {
-                        "model": "jobTypes",
-                        "key": "id"
-                    },
-                    "onDelete": "SET NULL",
-                    "onUpdate": "CASCADE",
-                    "seqType": "Sequelize.INTEGER"
                 }
             },
             "indexes": []
@@ -209,7 +203,6 @@
                     "seqType": "Sequelize.STRING"
                 },
                 "password": {
-                    "unique": false,
                     "allowNull": false,
                     "seqType": "Sequelize.STRING"
                 },
@@ -229,5 +222,5 @@
             "indexes": []
         }
     },
-    "revision": 4
+    "revision": 1
 }

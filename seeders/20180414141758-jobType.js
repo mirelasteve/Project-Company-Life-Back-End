@@ -20,40 +20,10 @@ module.exports = {
                 updatedAt: new Date(),
             },
             {
-                name: 'Education',
-                createdAt: new Date(),
-                updatedAt: new Date(),
-            },
-            {
-                name: 'Pharmacy',
-                createdAt: new Date(),
-                updatedAt: new Date(),
-            },
-            {
-                name: 'Accounting',
-                createdAt: new Date(),
-                updatedAt: new Date(),
-            },
-            {
-                name: 'Aviation',
-                createdAt: new Date(),
-                updatedAt: new Date(),
-            },
-            {
-                name: 'Finance',
-                createdAt: new Date(),
-                updatedAt: new Date(),
-            },
-            {
-                name: 'Logistics',
-                createdAt: new Date(),
-                updatedAt: new Date(),
-            },
-            {
                 name: 'Other',
                 createdAt: new Date(),
                 updatedAt: new Date(),
-            }
+            },
         ], {});
     },
 };

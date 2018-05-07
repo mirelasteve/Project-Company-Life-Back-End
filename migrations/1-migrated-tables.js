@@ -6,18 +6,18 @@ var Sequelize = require('sequelize');
  * Actions summary:
  *
  * createTable "contactDetails", deps: []
+ * createTable "jobAds", deps: []
  * createTable "jobApplications", deps: []
  * createTable "jobTypes", deps: []
  * createTable "links", deps: []
  * createTable "users", deps: []
- * createTable "jobAds", deps: [jobTypes]
  *
  **/
 
 var info = {
     "revision": 1,
-    "name": "created-models",
-    "created": "2018-04-14T14:15:29.003Z",
+    "name": "migrated-tables",
+    "created": "2018-05-06T16:45:03.137Z",
     "comment": ""
 };
 
@@ -59,6 +59,45 @@ var migrationCommands = [{
     {
         fn: "createTable",
         params: [
+            "jobAds",
+            {
+                "id": {
+                    "type": Sequelize.INTEGER,
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "allowNull": false
+                },
+                "title": {
+                    "type": Sequelize.STRING,
+                    "allowNull": false
+                },
+                "description": {
+                    "type": Sequelize.TEXT,
+                    "allowNull": false
+                },
+                "status": {
+                    "type": Sequelize.STRING,
+                    "allowNull": false
+                },
+                "jobTypeId": {
+                    "type": Sequelize.INTEGER,
+                    "allowNull": false
+                },
+                "createdAt": {
+                    "type": Sequelize.DATE,
+                    "allowNull": false
+                },
+                "updatedAt": {
+                    "type": Sequelize.DATE,
+                    "allowNull": false
+                }
+            },
+            {}
+        ]
+    },
+    {
+        fn: "createTable",
+        params: [
             "jobApplications",
             {
                 "id": {
@@ -71,6 +110,10 @@ var migrationCommands = [{
                     "type": Sequelize.INTEGER,
                     "allowNull": false
                 },
+                "jobId": {
+                    "type": Sequelize.INTEGER,
+                    "allowNull": false
+                },
                 "title": {
                     "type": Sequelize.STRING,
                     "allowNull": false
@@ -80,6 +123,10 @@ var migrationCommands = [{
                     "allowNull": false
                 },
                 "lastName": {
+                    "type": Sequelize.STRING,
+                    "allowNull": false
+                },
+                "email": {
                     "type": Sequelize.STRING,
                     "allowNull": false
                 },
@@ -161,6 +208,10 @@ var migrationCommands = [{
                     "type": Sequelize.STRING,
                     "allowNull": true
                 },
+                "type": {
+                    "type": Sequelize.STRING,
+                    "allowNull": true
+                },
                 "createdAt": {
                     "type": Sequelize.DATE,
                     "allowNull": false
@@ -191,8 +242,7 @@ var migrationCommands = [{
                 },
                 "password": {
                     "type": Sequelize.STRING,
-                    "allowNull": false,
-                    "unique": false
+                    "allowNull": false
                 },
                 "isAdmin": {
                     "type": Sequelize.STRING,
@@ -209,66 +259,24 @@ var migrationCommands = [{
             },
             {}
         ]
-    },
-    {
-        fn: "createTable",
-        params: [
-            "jobAds",
-            {
-                "id": {
-                    "type": Sequelize.INTEGER,
-                    "autoIncrement": true,
-                    "primaryKey": true,
-                    "allowNull": false
-                },
-                "title": {
-                    "type": Sequelize.STRING,
-                    "allowNull": false
-                },
-                "description": {
-                    "type": Sequelize.TEXT,
-                    "allowNull": false
-                },
-                "status": {
-                    "type": Sequelize.STRING,
-                    "allowNull": false
-                },
-                "createdAt": {
-                    "type": Sequelize.DATE,
-                    "allowNull": false
-                },
-                "updatedAt": {
-                    "type": Sequelize.DATE,
-                    "allowNull": false
-                },
-                "jobTypeId": {
-                    "type": Sequelize.INTEGER,
-                    "onUpdate": "CASCADE",
-                    "onDelete": "SET NULL",
-                    "references": {
-                        "model": "jobTypes",
-                        "key": "id"
-                    },
-                    "allowNull": true
-                }
-            },
-            {}
-        ]
     }
 ];
 
 module.exports = {
     pos: 0,
-    up: function(queryInterface, Sequelize) {
+    up: function(queryInterface, Sequelize)
+    {
         var index = this.pos;
         return new Promise(function(resolve, reject) {
             function next() {
-                if (index < migrationCommands.length) {
+                if (index < migrationCommands.length)
+                {
                     let command = migrationCommands[index];
-                    console.log("[#" + index + "] execute: " + command.fn);
+                    console.log("[#"+index+"] execute: " + command.fn);
                     index++;
                     queryInterface[command.fn].apply(queryInterface, command.params).then(next, reject);
-                } else
+                }
+                else
                     resolve();
             }
             next();
