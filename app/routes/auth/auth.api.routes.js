@@ -84,7 +84,7 @@ const init = (app, data) => {
                 });
             } else {
                 res.status(401).send({
-                    err: 'User already exist',
+                    err: 'User already exists',
                 });
             };
         });

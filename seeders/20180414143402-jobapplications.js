@@ -15,7 +15,7 @@ module.exports = {
                 updatedAt: new Date(),
             }, {
                 userId: 2,
-                title: 'Senior Developer',
+                title: 'Sales Assistant with FRENCH and English - Summer opportunity',
                 firstName: 'John',
                 lastName: 'Doe',
                 comment: 'added comment',
@@ -54,8 +54,8 @@ module.exports = {
             },
             {
                 userId: 8,
-                title: 'Digital Marketing Executive',
-                firstName: 'Leonel',
+                title: 'Sales Assistant with FRENCH and English - Summer opportunity',
+                firstName: 'Lionel',
                 lastName: 'Messi',
                 comment: 'Help develop and manage digital marketing campaigns',
                 cv: '1525425275862image-2.pdf',
@@ -67,7 +67,7 @@ module.exports = {
             },
             {
                 userId: 9,
-                title: 'Graduate Marketing Trainee',
+                title: 'Consultant Email Support for Spotify with German (NON-VOICE)',
                 firstName: 'Alehandro',
                 lastName: 'Naval',
                 comment: ' I have analytic and creative skills to support in all aspects of the marketing consultancy',
@@ -119,7 +119,7 @@ module.exports = {
             },
             {
                 userId: 6,
-                title: 'Accountant',
+                title: 'Logistics Operative',
                 firstName: 'Emily',
                 lastName: 'Bell',
                 comment: 'Is job type with contract',
@@ -132,7 +132,7 @@ module.exports = {
             },
             {
                 userId: 6,
-                title: 'Science Teacher for September 2018',
+                title: 'Aircraft Component Technician',
                 firstName: 'Emily',
                 lastName: 'Bell',
                 comment: 'Is job type with contract',
